@@ -1,55 +1,128 @@
 
+
 :root {
+
   --bg: #0f1419;
+
   --card: #1a2332;
+
   --text: #e7e9ea;
+
   --muted: #8b98a5;
+
   --accent: #1d9bf0;
+
   --border: #2f3b4a;
+
   --hl: #f5d742;
+
 }
+
 * { box-sizing: border-box; }
+
 body {
+
   margin: 0;
+
   font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
   background: var(--bg);
+
   color: var(--text);
+
   line-height: 1.5;
+
   padding: 1rem;
+
   max-width: 960px;
+
   margin-inline: auto;
+
 }
+
 a { color: var(--accent); }
+
 header {
+
   border-bottom: 1px solid var(--border);
+
   padding-bottom: 1rem;
+
   margin-bottom: 1.5rem;
+
 }
+
 h1 { font-size: 1.5rem; margin: 0 0 0.25rem; }
+
 .sub { color: var(--muted); font-size: 0.95rem; }
+
 nav { margin: 1rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
+
 .boss {
+
   background: var(--card);
+
   border: 1px solid var(--border);
+
   border-radius: 8px;
+
   padding: 1rem;
+
   margin-bottom: 1rem;
+
 }
+
 .boss h2 { margin: 0 0 0.75rem; font-size: 1.1rem; }
-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-th, td { text-align: left; padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--border); }
-th { color: var(--muted); font-weight: 600; }
-.kind { color: var(--muted); font-size: 0.8rem; }
-.find { margin: 1rem 0; }
-.find input {
-  width: 100%; max-width: 280px;
-  padding: 0.5rem 0.75rem;
-  border-radius: 6px;
+
+.boss-img-wrap { margin: 0 0 0.9rem; }
+
+.boss-img {
+
+  width: 100%;
+
+  max-height: 420px;
+
+  object-fit: contain;
+
   border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--text);
+
+  border-radius: 8px;
+
+  background: #0b1018;
+
 }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+
+th, td { text-align: left; padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--border); }
+
+th { color: var(--muted); font-weight: 600; }
+
+.kind { color: var(--muted); font-size: 0.8rem; }
+
+.find { margin: 1rem 0; }
+
+.find input {
+
+  width: 100%; max-width: 280px;
+
+  padding: 0.5rem 0.75rem;
+
+  border-radius: 6px;
+
+  border: 1px solid var(--border);
+
+  background: var(--card);
+
+  color: var(--text);
+
+}
+
 tr.hl td:last-child { background: rgba(245, 215, 66, 0.15); outline: 1px solid var(--hl); }
+
 .badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; background: var(--border); font-size: 0.75rem; margin-left: 0.5rem; }
+
 ul.arch { list-style: none; padding: 0; }
+
 ul.arch li { margin: 0.35rem 0; }
+
