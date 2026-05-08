@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Tempest Keep — The Eye — Traumatic</title>
+  <link rel="stylesheet" href="../../../assets/style.css"/>
+</head>
+<body>
+  <header>
+    <h1>Tempest Keep — The Eye <span class="badge">8 May 2026</span></h1>
+    <p class="sub">Traumatic — Gruul Mag time babyyy</p>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../ssc/">SSC</a>
+      <a href="../tk/">TK</a>
+    </nav>
+    <div class="find">
+      <label for="find">Highlight name</label><br/>
+      <input id="find" type="search" placeholder="Character name" autocomplete="off"/>
+    </div>
+  </header>
+  <p class="sub">Roster: Arca|Wes, Svampdoris, Knifì, Whitespook, Tange-Meat, Feriad, Recluse, Anodiapls, Gankie, Aveiroh, Möja, Damyn, Tørion, Kon, Anabolec, Kalle, Roken, eldornia, Bullé-Bullenbear, Swirlie, GZA, Kripleiks, Lollipop/Wheypowder</p>
+  <section class="boss" id="alar"><h2>Al'ar</h2><table><thead><tr><th>Role</th><th>Type</th><th>Assigned</th></tr></thead><tbody><tr data-name="—"><td>Main tank — Al'ar</td><td class="kind">tank</td><td>—</td></tr><tr data-name="—"><td>Add / platform tank</td><td class="kind">tank</td><td>—</td></tr><tr data-name="—"><td>Raid heal 1</td><td class="kind">heal_raid</td><td>—</td></tr><tr data-name="—"><td>Raid heal 2</td><td class="kind">heal_raid</td><td>—</td></tr><tr data-name="—"><td>Tank heal — MT</td><td class="kind">heal_tank</td><td>—</td></tr><tr data-name="—"><td>Tank heal — OT</td><td class="kind">heal_tank</td><td>—</td></tr><tr data-name="—"><td>Misdirect (phase)</td><td class="kind">misdirect</td><td>—</td></tr></tbody></table></section><section class="boss" id="void"><h2>Void Reaver</h2><table><thead><tr><th>Role</th><th>Type</th><th>Assigned</th></tr></thead><tbody><tr data-name="—"><td>Boss tank</td><td class="kind">tank</td><td>—</td></tr><tr data-name="—"><td>Raid heal 1</td><td class="kind">heal_raid</td><td>—</td></tr><tr data-name="—"><td>Raid heal 2</td><td class="kind">heal_raid</td><td>—</td></tr><tr data-name="—"><td>Tank heal</td><td class="kind">heal_tank</td><td>—</td></tr><tr data-name="—"><td>Misdirect — pull</td><td class="kind">misdirect</td><td>—</td></tr></tbody></table></section><section class="boss" id="solarian"><h2>High Astromancer Solarian</h2><table><thead><tr><th>Role</th><th>Type</th><th>Assigned</th></tr></thead><tbody><tr data-name="—"><td>Boss tank</td><td class="kind">tank</td><td>—</td></tr><tr data-name="—"><td>Add / wrath tank</td><td class="kind">tank</td><td>—</td></tr><tr data-name="—"><td>Raid heal 1</td><td class="kind">heal_raid</td><td>—</td></tr><tr data-name="—"><td>Raid heal 2</td><td class="kind">heal_raid</td><td>—</td></tr><tr data-name="—"><td>Tank heal — MT</td><td class="kind">heal_tank</td><td>—</td></tr><tr data-name="—"><td>Tank heal — OT</td><td class="kind">heal_tank</td><td>—</td></tr><tr data-name="—"><td>Misdirect</td><td class="kind">misdirect</td><td>—</td></tr></tbody></table></section><section class="boss" id="kael"><h2>Kael'thas Sunstrider</h2><table><thead><tr><th>Role</th><th>Type</th><th>Assigned</th></tr></thead><tbody><tr data-name="—"><td>Thaladred tank (kite)</td><td class="kind">tank</td><td>—</td></tr><tr data-name="—"><td>Lord Sanguinar tank</td><td class="kind">tank</td><td>—</td></tr><tr data-name="—"><td>Capernian / weapons</td><td class="kind">tank</td><td>—</td></tr><tr data-name="—"><td>Telonicus / phoenix</td><td class="kind">tank</td><td>—</td></tr><tr data-name="—"><td>Raid heal 1</td><td class="kind">heal_raid</td><td>—</td></tr><tr data-name="—"><td>Raid heal 2</td><td class="kind">heal_raid</td><td>—</td></tr><tr data-name="—"><td>Raid heal 3</td><td class="kind">heal_raid</td><td>—</td></tr><tr data-name="—"><td>Tank heals (rotate)</td><td class="kind">heal_tank</td><td>—</td></tr><tr data-name="—"><td>Tank heals (rotate)</td><td class="kind">heal_tank</td><td>—</td></tr><tr data-name="—"><td>Misdirect — advisors</td><td class="kind">misdirect</td><td>—</td></tr><tr data-name="—"><td>Misdirect — weapons</td><td class="kind">misdirect</td><td>—</td></tr></tbody></table></section>
+  <script>
+(function(){
+  var input = document.getElementById('find');
+  if (!input) return;
+  function run() {
+    var q = (input.value || '').trim().toLowerCase();
+    document.querySelectorAll('tr[data-name]').forEach(function(tr) {
+      var n = (tr.getAttribute('data-name') || '').toLowerCase();
+      tr.classList.toggle('hl', q.length > 0 && n.indexOf(q) !== -1);
+    });
+  }
+  input.addEventListener('input', run);
+})();
+</script>
+</body>
+</html>
