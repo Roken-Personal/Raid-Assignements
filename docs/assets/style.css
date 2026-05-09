@@ -120,6 +120,22 @@ th { color: var(--muted); font-weight: 600; }
 
 tr.hl td:last-child { background: rgba(245, 215, 66, 0.15); outline: 1px solid var(--hl); }
 
+tr.grp td {
+
+  background: rgba(255,255,255,0.04);
+
+  font-weight: 600;
+
+  color: var(--muted);
+
+  font-size: 0.85rem;
+
+  padding-top: 0.75rem;
+
+  border-bottom: 1px solid var(--border);
+
+}
+
 .badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; background: var(--border); font-size: 0.75rem; margin-left: 0.5rem; }
 
 ul.arch { list-style: none; padding: 0; }
