@@ -41,17 +41,127 @@ h1 { font-size: 1.5rem; margin: 0 0 0.25rem; }
 
 nav { margin: 1rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
 
+.alert-key {
+  margin: 0.85rem 0 0;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.82rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.85rem;
+}
+
+.alert-key-title {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.alert-key-items {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+}
+
+.alert-key-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.alert-key-ico {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.alert-key-label {
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.alert-key-desc {
+  flex: 1 1 12rem;
+  min-width: min(100%, 14rem);
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+/* Right rail on raid pages (desktop): TOC | bosses | alert legend */
+
+.alert-key-rail {
+  grid-area: alert;
+}
+
+.alert-key-rail .alert-key {
+  margin: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.alert-key-rail .alert-key-items {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.45rem;
+}
+
+.alert-key-rail .alert-key-desc {
+  flex: none;
+  min-width: 0;
+}
+
+@media (min-width: 1100px) {
+  .alert-key-rail {
+    position: sticky;
+    top: 0.75rem;
+    align-self: start;
+  }
+}
+
 .raid-shell {
   display: grid;
-  grid-template-columns: minmax(10rem, 13rem) minmax(0, 1fr);
   gap: 1.25rem;
   align-items: start;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "toc"
+    "alert"
+    "bosses";
+}
+
+.raid-shell .toc {
+  grid-area: toc;
+}
+
+.raid-shell .boss-stack {
+  grid-area: bosses;
+}
+
+@media (min-width: 881px) {
+  .raid-shell {
+    grid-template-columns: minmax(10rem, 13rem) minmax(0, 1fr);
+    grid-template-areas:
+      "toc bosses"
+      "alert alert";
+  }
+}
+
+@media (min-width: 1100px) {
+  .raid-shell {
+    grid-template-columns: minmax(10rem, 13rem) minmax(0, 1fr) minmax(11.5rem, 15rem);
+    grid-template-areas: "toc bosses alert";
+  }
 }
 
 @media (max-width: 880px) {
-  .raid-shell {
-    grid-template-columns: 1fr;
-  }
   .toc {
     position: static;
     max-height: none;
@@ -210,6 +320,67 @@ nav { margin: 1rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
 
 .tactic-section:last-child {
   margin-bottom: 0;
+}
+
+details.tactic-details {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.35rem 0.55rem 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+details.tactic-details summary.tactic-details-sum {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.15rem 0;
+}
+
+details.tactic-details .tactic-details-sum-main {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+details.tactic-details .tactic-details-ico {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+details.tactic-details summary.tactic-details-sum::-webkit-details-marker {
+  display: none;
+}
+
+details.tactic-details summary .tactic-sub {
+  margin: 0;
+}
+
+details.tactic-details .tactic-details-hint {
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+details.tactic-details .tactic-details-body {
+  margin-top: 0.45rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+details.tactic-details[open] summary .tactic-details-hint {
+  visibility: hidden;
+  width: 0;
+  overflow: hidden;
 }
 
 .tactic-sub {
