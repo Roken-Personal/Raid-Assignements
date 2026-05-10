@@ -308,6 +308,22 @@ details.acc-item[open] .acc-chevron {
   display: block;
 }
 
+.acc-role-img {
+  width: 22px;
+  height: 22px;
+  display: block;
+  object-fit: contain;
+}
+
+.tactic-inline-ico {
+  width: 22px;
+  height: 22px;
+  vertical-align: -0.35em;
+  margin-right: 0.35rem;
+  object-fit: contain;
+  display: inline-block;
+}
+
 .acc-body {
   padding: 0 0.65rem 0.65rem;
 }
