@@ -94,74 +94,53 @@ nav { margin: 1rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
   line-height: 1.35;
 }
 
-/* Right rail on raid pages (desktop): TOC | bosses | alert legend */
-
-.alert-key-rail {
-  grid-area: alert;
+.header-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem 1.25rem;
+  margin-top: 0.75rem;
 }
 
-.alert-key-rail .alert-key {
-  margin: 0;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5rem;
+.header-tools .find {
+  flex: 1 1 14rem;
+  min-width: min(100%, 11rem);
 }
 
-.alert-key-rail .alert-key-items {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.45rem;
-}
-
-.alert-key-rail .alert-key-desc {
-  flex: none;
+.header-tools .alert-key-inline {
+  flex: 2 1 22rem;
   min-width: 0;
 }
 
-@media (min-width: 1100px) {
-  .alert-key-rail {
-    position: sticky;
-    top: 0.75rem;
-    align-self: start;
+.header-tools .alert-key-inline .alert-key {
+  margin: 0;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.35rem 0.65rem;
+}
+
+.header-tools .alert-key-desc {
+  flex: 1 1 10rem;
+  min-width: 0;
+}
+
+@media (max-width: 720px) {
+  .header-tools .alert-key-inline .alert-key {
+    flex-wrap: wrap;
   }
 }
 
 .raid-shell {
   display: grid;
+  grid-template-columns: minmax(10rem, 13rem) minmax(0, 1fr);
   gap: 1.25rem;
   align-items: start;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "toc"
-    "alert"
-    "bosses";
-}
-
-.raid-shell .toc {
-  grid-area: toc;
-}
-
-.raid-shell .boss-stack {
-  grid-area: bosses;
-}
-
-@media (min-width: 881px) {
-  .raid-shell {
-    grid-template-columns: minmax(10rem, 13rem) minmax(0, 1fr);
-    grid-template-areas:
-      "toc bosses"
-      "alert alert";
-  }
-}
-
-@media (min-width: 1100px) {
-  .raid-shell {
-    grid-template-columns: minmax(10rem, 13rem) minmax(0, 1fr) minmax(11.5rem, 15rem);
-    grid-template-areas: "toc bosses alert";
-  }
 }
 
 @media (max-width: 880px) {
+  .raid-shell {
+    grid-template-columns: 1fr;
+  }
   .toc {
     position: static;
     max-height: none;
@@ -172,6 +151,8 @@ nav { margin: 1rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
   position: sticky;
   top: 0.75rem;
   align-self: start;
+  margin: 0;
+  display: block;
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1rem 0.85rem 0.85rem;
