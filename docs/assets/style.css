@@ -17,7 +17,7 @@ body {
   color: var(--text);
   line-height: 1.5;
   padding: 1rem;
-  max-width: 1180px;
+  max-width: 1360px;
   margin-inline: auto;
 }
 
@@ -37,8 +37,8 @@ nav { margin: 1rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
 
 .raid-shell {
   display: grid;
-  grid-template-columns: minmax(11rem, 13.5rem) minmax(0, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: minmax(10rem, 12rem) minmax(0, 1fr);
+  gap: 1.25rem;
   align-items: start;
 }
 
@@ -104,7 +104,31 @@ nav { margin: 1rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
 .boss-stack {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.5rem;
+}
+
+/* Outer row: bordered boss card (map + assignments) | tactic rail outside the card */
+.boss-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(13.5rem, 21rem);
+  gap: 1rem;
+  align-items: start;
+  scroll-margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .boss-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.boss-layout:focus-visible {
+  outline: none;
+}
+
+.boss-layout:focus-visible .boss-main {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .boss {
@@ -112,12 +136,10 @@ nav { margin: 1rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1rem;
-  scroll-margin-top: 1rem;
 }
 
-.boss-anchor:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
+.boss-main {
+  min-width: 0;
 }
 
 .boss h2 {
@@ -125,49 +147,17 @@ nav { margin: 1rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
   font-size: 1.15rem;
 }
 
-/* Map + tactic row; assignments full width below */
-.boss-map-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(14rem, 19rem);
-  gap: 1rem;
-  align-items: stretch;
-  margin-bottom: 1rem;
-}
-
-@media (max-width: 720px) {
-  .boss-map-row {
-    grid-template-columns: 1fr;
-  }
-}
-
-.boss-map-col {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-}
-
 .boss-img-wrap {
-  flex: 1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  min-height: 0;
+  margin-bottom: 1rem;
 }
 
 .boss-img {
   width: 100%;
-  max-height: 420px;
+  max-height: 480px;
   object-fit: contain;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: #0b1018;
-}
-
-.boss-map-placeholder {
-  min-height: 8rem;
-  border: 1px dashed var(--border);
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.2);
 }
 
 .boss-assign {
@@ -183,11 +173,14 @@ nav { margin: 1rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
   background: rgba(15, 20, 25, 0.92);
   backdrop-filter: blur(6px);
   font-size: 0.88rem;
-  min-height: 100%;
 }
 
-.tactic-card--solo {
-  margin-bottom: 1rem;
+.tactic-rail {
+  position: sticky;
+  top: 0.75rem;
+  align-self: start;
+  max-height: calc(100vh - 1.5rem);
+  overflow-y: auto;
 }
 
 .tactic-h {
