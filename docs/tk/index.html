@@ -17,10 +17,12 @@
     </nav>
     <div class="header-tools">
       <div class="find">
-        <label for="find">Highlight name</label><br/>
-        <input id="find" type="search" placeholder="Character name" autocomplete="off"/>
+        <label for="find">Highlight name</label>
+        <div class="find-inline">
+          <input id="find" type="search" placeholder="Character name" autocomplete="off"/>
+          <div class="alert-key-inline"><div class="alert-key" role="note" aria-label="Alert icon legend"><span class="alert-key-title">Alert icons</span><span class="alert-key-items"><span class="alert-key-item"><img class="alert-key-ico" src="../assets/wow-icons/alert-tank.webp" alt="" width="20" height="20" loading="lazy"/><span class="alert-key-label">Tank</span></span><span class="alert-key-item"><img class="alert-key-ico" src="../assets/wow-icons/alert-healer.webp" alt="" width="20" height="20" loading="lazy"/><span class="alert-key-label">Healer</span></span><span class="alert-key-item"><img class="alert-key-ico" src="../assets/wow-icons/alert-dps.webp" alt="" width="20" height="20" loading="lazy"/><span class="alert-key-label">DPS</span></span></span><span class="alert-key-desc">Point out key tactics that especially affect those roles.</span></div></div>
+        </div>
       </div>
-      <div class="alert-key-inline"><div class="alert-key" role="note" aria-label="Alert icon legend"><span class="alert-key-title">Alert icons</span><span class="alert-key-items"><span class="alert-key-item"><img class="alert-key-ico" src="../assets/wow-icons/alert-tank.webp" alt="" width="20" height="20" loading="lazy"/><span class="alert-key-label">Tank</span></span><span class="alert-key-item"><img class="alert-key-ico" src="../assets/wow-icons/alert-healer.webp" alt="" width="20" height="20" loading="lazy"/><span class="alert-key-label">Healer</span></span><span class="alert-key-item"><img class="alert-key-ico" src="../assets/wow-icons/alert-dps.webp" alt="" width="20" height="20" loading="lazy"/><span class="alert-key-label">DPS</span></span></span><span class="alert-key-desc">Point out key tactics that especially affect those roles.</span></div></div>
     </div>
   </header>
   <p class="sub">Roster: Arca|Wes, Knifì, Whitespook, Feriad, Lelman, Recluse, Aveiroh, Möja, Damyn, Zerefo, eldornia, GZA, Kripleiks, Svampdoris, Meatballbean, Anodiapls, Gankie, Tørion, Kon, Anabolec, Kalle, Bullé-Bullenbear, Swirlie, Wheypowder</p>
@@ -65,5 +67,7 @@
   if (first && first.id) setActive(first.id);
 })();
 </script>
+  <script>var whTooltips = { colorLinks: false, iconizeLinks: false, renameLinks: false };</script>
+  <script src="https://wow.zamimg.com/widgets/power.js"></script>
 </body>
 </html>

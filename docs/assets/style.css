@@ -95,32 +95,45 @@ nav { margin: 1rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
 }
 
 .header-tools {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  gap: 0.75rem 1.25rem;
   margin-top: 0.75rem;
 }
 
 .header-tools .find {
-  flex: 1 1 14rem;
+  margin: 0;
+}
+
+/* Input + alert legend share one row so baselines/heights align with the field */
+.header-tools .find-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.75rem 1rem;
+  margin-top: 0.35rem;
+}
+
+.header-tools .find-inline input {
+  width: auto;
+  flex: 0 1 auto;
   min-width: min(100%, 11rem);
+  max-width: 280px;
 }
 
 .header-tools .alert-key-inline {
-  flex: 2 1 22rem;
+  flex: 0 1 auto;
   min-width: 0;
 }
 
 .header-tools .alert-key-inline .alert-key {
   margin: 0;
+  width: fit-content;
+  max-width: 100%;
   flex-wrap: nowrap;
   align-items: center;
   gap: 0.35rem 0.65rem;
 }
 
 .header-tools .alert-key-desc {
-  flex: 1 1 10rem;
+  flex: 0 1 auto;
   min-width: 0;
 }
 
@@ -486,6 +499,37 @@ details.acc-item[open] .acc-chevron {
   margin-right: 0.35rem;
   object-fit: contain;
   display: inline-block;
+}
+
+/* Wowhead power.js attaches hover tooltips to links under https://www.wowhead.com/ */
+a.tactic-wowhead {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  vertical-align: baseline;
+  margin-right: 0.35rem;
+  line-height: 1.35;
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+}
+a.tactic-wowhead .tactic-inline-ico {
+  margin-right: 0;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+a.tactic-wowhead .tactic-wowhead-lbl {
+  font-weight: 500;
+  color: var(--text);
+}
+a.tactic-wowhead:hover,
+a.tactic-wowhead:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
+a.tactic-wowhead:hover .tactic-inline-ico,
+a.tactic-wowhead:focus-visible .tactic-inline-ico {
+  filter: brightness(1.12);
 }
 
 .acc-body {
