@@ -102,11 +102,11 @@ nav { margin: 1rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
   margin: 0;
 }
 
-/* Input + alert legend share one row so baselines/heights align with the field */
+/* Input + alert legend share one row — height matches .alert-key (padding + border + row) */
 .header-tools .find-inline {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.75rem 1rem;
   margin-top: 0.35rem;
 }
@@ -116,6 +116,11 @@ nav { margin: 1rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
   flex: 0 1 auto;
   min-width: min(100%, 11rem);
   max-width: 280px;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 0 0.75rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
 }
 
 .header-tools .alert-key-inline {
@@ -404,7 +409,21 @@ details.tactic-details[open] summary .tactic-details-hint {
   padding-left: 1.1rem;
 }
 
-.tactic-list li { margin: 0.25rem 0; }
+.tactic-list li {
+  margin: 0.35rem 0;
+  line-height: 1.55;
+  overflow-wrap: break-word;
+}
+
+/* Keep icon + spell name on one line; line breaks happen between spell links in narrow rail */
+.tactic-card a.tactic-wowhead {
+  white-space: nowrap;
+}
+
+/* Indented spell rows after manual {br} in tactic bullets */
+.tactic-card .tactic-list li br + a.tactic-wowhead {
+  margin-inline-start: 1rem;
+}
 
 .tactic-muted {
   color: var(--muted);
@@ -506,9 +525,8 @@ a.tactic-wowhead {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  vertical-align: baseline;
-  margin-right: 0.35rem;
-  line-height: 1.35;
+  vertical-align: middle;
+  line-height: inherit;
   border-radius: 4px;
   text-decoration: none;
   color: inherit;
@@ -519,7 +537,7 @@ a.tactic-wowhead .tactic-inline-ico {
   vertical-align: middle;
 }
 a.tactic-wowhead .tactic-wowhead-lbl {
-  font-weight: 500;
+  font-weight: inherit;
   color: var(--text);
 }
 a.tactic-wowhead:hover,
