@@ -230,7 +230,7 @@ nav { margin: 1rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
 /* Outer row: bordered boss card (map + assignments) | tactic rail outside the card */
 .boss-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(13.5rem, 21rem);
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 24rem);
   gap: 1rem;
   align-items: start;
   scroll-margin-top: 5rem;
@@ -521,24 +521,24 @@ details.acc-item[open] .acc-chevron {
 }
 
 /* Wowhead power.js attaches hover tooltips to links under https://www.wowhead.com/ */
+/* Baseline-align spell name with surrounding sentence; icon matches other tactic-inline-ico */
 a.tactic-wowhead {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  vertical-align: middle;
+  display: inline;
+  vertical-align: baseline;
   line-height: inherit;
   border-radius: 4px;
   text-decoration: none;
   color: inherit;
 }
 a.tactic-wowhead .tactic-inline-ico {
-  margin-right: 0;
-  flex-shrink: 0;
-  vertical-align: middle;
+  display: inline-block;
+  margin-right: 0.35rem;
+  vertical-align: -0.35em;
 }
 a.tactic-wowhead .tactic-wowhead-lbl {
   font-weight: inherit;
   color: var(--text);
+  vertical-align: baseline;
 }
 a.tactic-wowhead:hover,
 a.tactic-wowhead:focus-visible {
