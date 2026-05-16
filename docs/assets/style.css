@@ -572,7 +572,11 @@ table.assign th {
   font-weight: 600;
 }
 
-.kind { color: var(--muted); font-size: 0.8rem; }
+table.assign th:last-child,
+table.assign td:last-child {
+  min-width: 9.5rem;
+  white-space: nowrap;
+}
 
 .find { margin: 1rem 0; }
 
