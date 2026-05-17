@@ -102,7 +102,7 @@ nav { margin: 1rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
   margin: 0;
 }
 
-/* Input + alert legend share one row — height matches .alert-key (padding + border + row) */
+/* Input + alert legend share one row ? height matches .alert-key (padding + border + row) */
 .header-tools .find-inline {
   display: flex;
   flex-wrap: wrap;
@@ -233,7 +233,7 @@ nav { margin: 1rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
   grid-template-columns: minmax(0, 1fr) minmax(16rem, 24rem);
   gap: 1rem;
   align-items: start;
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 0;
 }
 
 @media (max-width: 900px) {
