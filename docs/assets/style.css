@@ -498,6 +498,13 @@ details.acc-item[open] .acc-chevron {
   height: 22px;
 }
 
+.acc-ico--marker .tactic-inline-ico {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  vertical-align: middle;
+}
+
 .acc-svg {
   width: 22px;
   height: 22px;
@@ -552,6 +559,57 @@ a.tactic-wowhead:focus-visible .tactic-inline-ico {
 
 .acc-body {
   padding: 0 0.65rem 0.65rem;
+}
+
+.marker-tabs {
+  margin-top: 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.5rem 0.55rem 0.65rem;
+}
+
+.marker-tab-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+.marker-tab-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 0.35rem 0.45rem 0;
+  padding: 0.35rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.marker-tab-label .tactic-inline-ico {
+  margin: 0;
+  vertical-align: middle;
+}
+
+.marker-tab-input:checked + .marker-tab-label {
+  border-color: var(--accent);
+  color: var(--text);
+  background: rgba(29, 155, 240, 0.12);
+}
+
+.marker-tab-panel {
+  display: none;
+  padding-top: 0.25rem;
+}
+
+.marker-tab-input:checked + .marker-tab-label + .marker-tab-panel {
+  display: block;
 }
 
 table.assign {
